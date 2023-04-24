@@ -1,0 +1,150 @@
+/* general styles */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+}
+
+/* header styles */
+header {
+	background-color: #1C2938;
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+}
+
+nav a {
+	color: #FFFFFF;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	margin: 0;
+	font-size: 32px;
+}
+
+/* main styles */
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+h2 {
+	margin-top: 40px;
+	font-size: 28px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid #CCCCCC;
+	margin-bottom: 10px;
+}
+
+input[type="submit"] {
+	background-color: #1C2938;
+	color: #FFFFFF;
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+	background-color: #223547;
+}
+
+/* dropdown menu styles */
+.select {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.select select {
+	display: inline-block;
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid #CCCCCC;
+	appearance: none;
+	background-color: #FFFFFF;
+	cursor: pointer;
+}
+
+.select:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	border: 5px solid transparent;
+	border-top-color: #1C2938;
+}
+
+.select select:focus + .dropdown {
+	max-height: 200px;
+	overflow-y: scroll;
+}
+
+.dropdown {
+	position: absolute;
+	top: calc(100% + 5px);
+	left: 0;
+	z-index: 999;
+	display: block;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+	background-color: #FFFFFF;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+}
+
+.dropdown ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dropdown ul li {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.dropdown ul li:hover {
+	background-color: #F5F5F5;
+}
+
+/* footer styles */
+footer {
+	background-color: #EAEAEA;
+	text-align: center;
+	padding: 10px;
+}
