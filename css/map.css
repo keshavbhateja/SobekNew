@@ -1,0 +1,12 @@
+#map-container {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 70%;
+    height: 600px;
+}
+#map {
+width: 70%;
+height: 600px;
+margin: 0 auto; /* add this line to center the div horizontally */
+}
