@@ -15,7 +15,6 @@
 
   var locations = [
     { name: "Shaarawy", lat: 31.246010122515237, lng: 29.97428103231592},           
-
     { name: "Zezenia", lat: 31.240774235720423, lng: 29.966225859271766 },
     { name: "Gleem", lat: 31.238551075902095, lng: 29.96268714419768 },
     { name: "Bolkly", lat: 31.231320287120393, lng: 29.95526383892848 },
@@ -153,14 +152,139 @@ route2Locations.forEach(function(location) {
     title: location.name
   });
 });
+var route3Locations = [
+{ name: "Shaarawy", lat: 31.246010122515237, lng: 29.97428103231592},           
+{ name: "El Raml", lat: 31.240774235720423, lng: 29.966225859271766 },
+{ name: "Sidi Gaber", lat: 31.231320287120393, lng: 29.95526383892848 },
+{ name: "AIU", lat: 30.811834913805104, lng: 28.929844683814757 }
+];
+
+var latLngArray3 = route3Locations.map(function(location) {
+  return new google.maps.LatLng(location.lat, location.lng);
+});
+
+var waypoints3 = route3Locations.slice(1, route3Locations.length - 1).map(function(location) {
+  return { location: { lat: location.lat, lng: location.lng } };
+});
+
+var request3 = {
+  origin: latLngArray3[0],
+  destination: latLngArray3[latLngArray3.length - 1],
+  waypoints: waypoints3,
+  optimizeWaypoints: true,
+  travelMode: google.maps.TravelMode.DRIVING
+};
+
+var directionsService = new google.maps.DirectionsService();
+
+directionsService.route(request3, function(response, status) {
+  if (status === google.maps.DirectionsStatus.OK) {
+    var directionsRenderer3 = new google.maps.DirectionsRenderer({
+      map: map,
+      suppressMarkers: true
+    });
+    directionsRenderer3.setDirections(response);
+  } else {
+    console.error('Directions request failed due to ' + status);
+  }
+});
+
+route3Locations.forEach(function(location) {
+  var marker = new google.maps.Marker({
+    position: { lat: location.lat, lng: location.lng },
+    map: map,
+    title: location.name
+  });
+});
 
 
+var route4Locations = [
+{ name: "Abu Qir", lat: 31.208225508358357, lng: 29.929442942494376 },
+{ name: "Borg El Arab", lat: 31.194708207664614, lng: 29.90834630266485 },
+{ name: "El Alamein", lat: 31.15816094224744, lng: 29.87028375870258 },
+{ name: "AIU", lat: 30.811834913805104, lng: 28.929844683814757 }
+];
 
+var latLngArray4 = route4Locations.map(function(location) {
+  return new google.maps.LatLng(location.lat, location.lng);
+});
 
+var waypoints4 = route4Locations.slice(1, route4Locations.length - 1).map(function(location) {
+  return { location: { lat: location.lat, lng: location.lng } };
+});
 
-  
+var request4 = {
+  origin: latLngArray4[0],
+  destination: latLngArray4[latLngArray4.length - 1],
+  waypoints: waypoints4,
+  optimizeWaypoints: true,
+  travelMode: google.maps.TravelMode.DRIVING
+};
+
+directionsService.route(request4, function(response, status) {
+  if (status === google.maps.DirectionsStatus.OK) {
+    var directionsRenderer4 = new google.maps.DirectionsRenderer({
+      map: map,
+      suppressMarkers: true
+    });
+    directionsRenderer4.setDirections(response);
+  } else {
+    console.error('Directions request failed due to ' + status);
+  }
+});
+
+route4Locations.forEach(function(location) {
+  var marker = new google.maps.Marker({
+    position: { lat: location.lat, lng: location.lng },
+    map: map,
+    title: location.name
+  });
+});
+
+var route5Locations = [
+{ name: "Smouha", lat: 31.228745892996518, lng: 29.95129628296765},           
+{ name: "Mansheya El Bakry", lat: 31.221558760235006, lng: 29.966225859271766 },
+{ name: "El Maamoura", lat: 31.205905827020125, lng: 29.924735254385443 },
+{ name: "AIU", lat: 30.811834913805104, lng: 28.929844683814757 }
+];
+
+var latLngArray5 = route5Locations.map(function(location) {
+  return new google.maps.LatLng(location.lat, location.lng);
+});
+
+var waypoints5 = route5Locations.slice(1, route5Locations.length - 1).map(function(location) {
+  return { location: { lat: location.lat, lng: location.lng } };
+});
+
+var request5 = {
+  origin: latLngArray5[0],
+  destination: latLngArray5[latLngArray5.length - 1],
+  waypoints: waypoints5,
+  optimizeWaypoints: true,
+  travelMode: google.maps.TravelMode.DRIVING
+};
+
+directionsService.route(request5, function(response, status) {
+  if (status === google.maps.DirectionsStatus.OK) {
+    var directionsRenderer5 = new google.maps.DirectionsRenderer({
+      map: map,
+      suppressMarkers: true
+    });
+    directionsRenderer5.setDirections(response);
+  } else {
+    console.error('Directions request failed due to ' + status);
+  }
+});
+
+route5Locations.forEach(function(location) {
+  var marker = new google.maps.Marker({
+    position: { lat: location.lat, lng: location.lng },
+    map: map,
+    title: location.name
+  });
+});
+
 }
-
  
 initMap();
 
