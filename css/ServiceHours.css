@@ -34,10 +34,11 @@
   table td {
 	border: 1px solid #CCCCCC;
 	padding: 10px;
+  white-space: nowrap;
   }
   
   table th {
-	background-color: #ffffff;
+	background-color: #c12929;
 	text-align: left;
   }
 
