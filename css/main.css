@@ -460,14 +460,13 @@ ul.actions.fit.stacked {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
-	background-color: #2a2f4a;
+	/* background-color: #2a2f4a; */
 	box-shadow: 0 0 .25em 0 rgba(0, 0, 0, .15);
 	cursor: default;
 	font-weight: 600;
-	height: 3.25em;
 	left: 0;
-	letter-spacing: .25em;
-	line-height: 3.25em;
+	letter-spacing: .15em;
+	line-height: 2.5em;
 	margin: 0;
 	position: fixed;
 	text-transform: uppercase;
@@ -529,7 +528,7 @@ ul.actions.fit.stacked {
 	font-size: .8em;
 	height: inherit;
 	line-height: inherit;
-	padding: 0 .75em;
+	padding: 0.25em;
 	position: relative;
 	vertical-align: middle
 }

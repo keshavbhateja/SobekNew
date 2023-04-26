@@ -40,3 +40,8 @@
 	background-color: #ffffff;
 	text-align: left;
   }
+
+  main {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
