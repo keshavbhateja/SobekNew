@@ -320,7 +320,7 @@ ul.actions.fit.stacked {
 	font-weight: 600;
 	height: 3.5em;
 	letter-spacing: .25em;
-	line-height: 3.5em;
+	line-height: 2.5em;
 	padding: 0 1.75em;
 	text-align: center;
 	text-decoration: none;
@@ -530,7 +530,6 @@ ul.actions.fit.stacked {
 	line-height: inherit;
 	padding: 0.25em;
 	position: relative;
-	vertical-align: middle
 }
 
 #header nav a:last-child {
