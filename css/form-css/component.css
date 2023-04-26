@@ -15,14 +15,23 @@
 }
 #q4{
     border-color: white;
-    color: white;
 }
 
-#q4::placeholder{
+/* #q4::placeholder{
     color: white;
 	opacity: 0.5;
+} */
+
+/* Center the submit and continue buttons using Flexbox */
+.fs-form-buttons {
+    display: flex;
+    justify-content: center;
 }
 
+.fs-form-buttons .fs-submit, 
+.fs-form-buttons .fs-continue {
+    display: inline-block;
+}
 
 
 /* Title */
@@ -524,7 +533,7 @@ button.fs-continue,
 	background: #fffed8;
 }
 
-/* Progress bar */
+/* Progress bar
 .fs-progress {
 	position: absolute;
 	top: 0;
@@ -533,7 +542,7 @@ button.fs-continue,
 	background: #fffed8;
 	-webkit-transition: width 0.3s ease-in-out;
 	transition: width 0.3s ease-in-out;
-}
+} */
 
 /* Number indicator */
 .fs-numbers {
