@@ -18,6 +18,14 @@
         const map = document.getElementById('map');
         map.scrollIntoView({ behavior: 'smooth' });
       }
+
+      function hideForm(){
+        const form = document.getElementById('attractionSelect');
+        form.style.display = 'none';
+        
+      }
+
+
     </script>
   </head>  
   <body>
@@ -27,7 +35,7 @@
         <h1> </h1>
     <form onsubmit="handleSelectOption(event)">
        <h2>Choose a city:</h2>
-      <select id="citySelect">
+      <select id="citySelect" onchange="hideForm();">
         <option value="Choose your Route"> Choose your Route</option>
         <option value="Route 1"> Route 1</option>
         <option value="Route 2">Route 2</option>
@@ -42,6 +50,7 @@
     <script>
     function handleSelectOption(event) {
       event.preventDefault(); // prevent form submission
+      attractionSelect.style.display = 'block';
       const selectedOption = document.getElementById('citySelect').value;
       document.getElementById('selectedOption').value = selectedOption;
       // do something with the selected option value
@@ -57,16 +66,21 @@
       else if (selectedOption == 'Route 5'){
         showRoute5();
       }
+      else if (selectedOption == 'Choose your Route'){
+        hideForm();
+      }
     }
     </script>
       
-      <h2>Choose Pickup Point:</h2>
-      <select id="attractionSelect"></select>
+
+      <h2 name="attractionSelect">Choose Pickup Point:</h2>
+      <select id="attractionSelect" style="display: none;"></select></select>
       </main>
     <script>
     // Get references to the select elements
     const citySelect = document.getElementById('citySelect');
     const attractionSelect = document.getElementById('attractionSelect');
+    
     
     // Define the options for each city
     const cityOptions = {
