@@ -10,8 +10,15 @@
     <link rel="stylesheet" href="/css/main.css">
     <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="/css/PlanTrip.css">
+    <link rel="stylesheet" href="/css/map.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoUGO3G-IFqcPfIJ9DxjB2uPVnKgeg-10&callback=initMap" async defer></script>
     <script src="/scripts/map.js"></script>
+    <script>
+      function scrollToMap() {
+        const map = document.getElementById('map');
+        map.scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
   </head>  
   <body>
     <div id="wrapper" style="height: 100vh;">
@@ -29,7 +36,7 @@
         <option value="Route 5">Route 5</option>
       </select>
       <input type="hidden" id="selectedOption" name="selectedOption">
-      <input type="submit" value="Show route on map">
+      <input type="submit" value="Show route on map" onclick="scrollToMap()">
     </form>
     
     <script>
@@ -55,29 +62,8 @@
       
       <h2>Choose Pickup Point:</h2>
       <select id="attractionSelect"></select>
-      
-    
-    
-       
-    
-    
-    
       </main>
-      
-    
-    
-    
-    
-    
-    
     <script>
-    
-    
-    
-    
-    
-    
-    
     // Get references to the select elements
     const citySelect = document.getElementById('citySelect');
     const attractionSelect = document.getElementById('attractionSelect');
@@ -138,39 +124,11 @@
         attractionSelect.add(option);
       }
     });
-    
-    
-    
-    
     </script>
-    
-    
-    
     </div>
     <div id="map-container">
-        <div id="map" style="width: 100%; height: 600px;">
-        
-        
-         <style> 
-            #map-container {
-                position: absolute;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                width: 70%;
-                height: 600px;
-            }
-            #map {
-            width: 70%;
-            height: 600px;
-            margin: 0 auto; /* add this line to center the div horizontally */
-            }
-          </style>
-        
-        
-        </div>
-        <script> initmap();</script>
-    </div>
+      <div id="map" style="width: 70vw; height: 50vh;"></div>
+  </div>
     
     
     </body>
