@@ -22,6 +22,7 @@
       function hideForm(){
         const form = document.getElementById('attractionSelect');
         form.style.display = 'none';
+        pickupSubmit.style.display = 'none';
         
       }
 
@@ -52,6 +53,10 @@
       event.preventDefault(); // prevent form submission
       attractionSelect.style.display = 'block';
       const selectedOption = document.getElementById('citySelect').value;
+      submitButton = document.getElementById('pickupSubmit');
+      pickupSubmit.style.display = 'block';
+
+      
       document.getElementById('selectedOption').value = selectedOption;
       // do something with the selected option value
       
@@ -74,7 +79,9 @@
       
 
       <h2 name="attractionSelect">Choose Pickup Point:</h2>
-      <select id="attractionSelect" style="display: none;"></select></select>
+      <select id="attractionSelect" style="display: none;">
+        <input type="submit" id = "pickupSubmit"value="Confirm" style="display: none">
+      </select></select>
       </main>
     <script>
     // Get references to the select elements
