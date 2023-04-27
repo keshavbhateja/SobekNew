@@ -83,11 +83,11 @@
   .image-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 0px;
   }
   
   .image-container img {
-    width: 100%;
+    width: 30%;
   }
 
   .footer-dark .copyright {
