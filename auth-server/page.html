@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Webpage</title>
+</head>
+<body>
+  <h1>Hi</h1>
+  <button id="my-button">Log in with Google</button>
+  <script>
+    const myButton = document.getElementById('my-button');
+    myButton.addEventListener('click', () => {
+window.location.href = 'http://localhost:5500/auth/google';
+    });
+  </script>
+</body>
+</html>
