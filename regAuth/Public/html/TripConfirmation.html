@@ -16,7 +16,7 @@
   <div class="container">
     <h1>Trip Confirmation</h1>
     <div class="trip-details">
-        <p><strong>Route:</strong> Route 1 <span id="Route"></span></p>
+        <p id="head"><strong>Route:</strong> Route 1 <span id="Route"></span></p>
         <p><strong>Departure:</strong> Zezenia <span id="departure"></span></p>
         <p><strong>Arrival:</strong> AIU Campus <span id="arrival"></span></p>
         <p><strong>Pickup Date</strong> 1 May 2023 <span id="Pickup Date"></span></p>
@@ -34,6 +34,14 @@
     <div id="footer"></div></div>
        
     <!-- Scripts -->
+    <script>
+      window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const var1 = urlParams.get('var1');
+        var head = document.querySelector('#head');
+        head.textContent = var1;
+    };
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     <script src = "../scripts/header.js"></script>
