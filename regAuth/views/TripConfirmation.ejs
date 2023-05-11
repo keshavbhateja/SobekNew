@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sobek Transit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <noscript><link rel="stylesheet" href="../css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../css/TripConfirmation.css">
+  </head>
+  <body>
+    <div id="header"></div>
+  <div class="container">
+    <h1>Trip Confirmation</h1>
+    <div class="trip-details">
+      <%- include('header') %>
+      <script>
+    
+    </script>
+     
+      <p id="head"><strong>Route: <%= routeSelect %></strong>  <span id="Route"></span></p>
+
+<p><strong>Departure: <%= pickupSelect %> </strong> ><span id="departure"></span></p>
+
+<p><strong>Arrival:</strong> AIU Campus <span id="arrival"></span></p>
+
+<p><strong>Pickup Date</strong> 1 May 2023 <span id="Pickup Date"></span></p>
+
+</div>
+
+
+    <div class="payment">
+        <form on submit = "redirect()">
+            <input type="submit" value="Confirm Trip">
+        </form>
+        <script>
+          function redirect(){
+            window.location.href = "https://accept.paymob.com/api/acceptance/iframes/452032?payment_token=ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5WDJsa0lqbzFOemMwTnpZc0ltRnRiM1Z1ZEY5alpXNTBjeUk2TVRBd0xDSmpkWEp5Wlc1amVTSTZJa1ZIVUNJc0ltbHVkR1ZuY21GMGFXOXVYMmxrSWpveU5qSXlNRE13TENKdmNtUmxjbDlwWkNJNk1USXdOakV4T1RFd0xDSmlhV3hzYVc1blgyUmhkR0VpT25zaVptbHljM1JmYm1GdFpTSTZJa05zYVdabWIzSmtJaXdpYkdGemRGOXVZVzFsSWpvaVRtbGpiMnhoY3lJc0luTjBjbVZsZENJNklrVjBhR0Z1SUV4aGJtUWlMQ0ppZFdsc1pHbHVaeUk2SWpnd01qZ2lMQ0ptYkc5dmNpSTZJalF5SWl3aVlYQmhjblJ0Wlc1MElqb2lPREF6SWl3aVkybDBlU0k2SWtwaGMydHZiSE5yYVdKMWNtZG9JaXdpYzNSaGRHVWlPaUpWZEdGb0lpd2lZMjkxYm5SeWVTSTZJa05TSWl3aVpXMWhhV3dpT2lKamJHRjFaR1YwZEdVd09VQmxlR0V1WTI5dElpd2ljR2h2Ym1WZmJuVnRZbVZ5SWpvaUt6ZzJLRGdwT1RFek5USXhNRFE0TnlJc0luQnZjM1JoYkY5amIyUmxJam9pTURFNE9UZ2lMQ0psZUhSeVlWOWtaWE5qY21sd2RHbHZiaUk2SWs1QkluMHNJbXh2WTJ0ZmIzSmtaWEpmZDJobGJsOXdZV2xrSWpwbVlXeHpaU3dpWlhoMGNtRWlPbnQ5TENKemFXNW5iR1ZmY0dGNWJXVnVkRjloZEhSbGJYQjBJanBtWVd4elpTd2laWGh3SWpveE5qZ3pOalV3TmpNM0xDSndiV3RmYVhBaU9pSXhOVFF1TVRnMUxqSXdNaTR5TXpjaWZRLjFlVm9MZ0NYdFNyN29Hc0lvbW9PUGRXNHhGQU1PUGpxOHJXUG53UEo4aW93QWZaZ1pkRldKVV9KczF0WFBoM1I5MHNJQVFfQ2lzaHJDOElja0pGZ1pn";
+
+          }
+        </script>
+    </div>
+</div>
+<script src="../scripts/header.js"></script>
+    </main>
+    
+    <%- include('footer') %>
+    <!-- Scripts -->
+    <!-- <script>
+      window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const var1 = urlParams.get('var1');
+        var head = document.querySelector('#head');
+        head.textContent = var1;
+    }; -->
+    <script>
+     
+    </script>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src = "../scripts/header.js"></script>
+  </body>
+  </html>
+

@@ -1,0 +1,71 @@
+/* set global box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* reset default styles for body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* style the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* style the main content */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 40px;
+  font-size: 28px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+table th {
+  background-color: #c12929;
+  color: #fff;
+  text-align: left;
+}

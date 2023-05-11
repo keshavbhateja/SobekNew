@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobek Transit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/map.css">
+    <noscript><link rel="stylesheet" href="../css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+    <div id="wrapper" style="height: 100vh;">
+        <%- include('header') %>
+				<!-- Banner -->
+                <section id="banner" class="major">
+                    <div class="inner">
+                        <header class="major">
+                            <h1>Welcome to Sobek Transit</h1>
+                        </header>
+                        <div class="content">
+                            <p>Providing transportation to Alamein Internatonal University<br /></p>
+                            <ul class="actions">
+                                <li><a href="login.html" class="button next scrolly" style="line-height: 3.5em !important;">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+    </div>
+    <div id="map-container">
+        <div id="map" style="width: 70vw; height: 50vh;"></div>
+    </div>
+    <!-- <div id="footer"></div> -->
+   
+    <!-- Scripts -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoUGO3G-IFqcPfIJ9DxjB2uPVnKgeg-10&callback=initMap" async defer></script>
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/jquery.scrolly.min.js"></script>
+    <script src="../scripts/jquery.scrollex.min.js"></script>
+    <script src="../scripts/browser.min.js"></script>
+    <script src="../scripts/breakpoints.min.js"></script>
+    <script src="../scripts/util.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/map.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src = "../scripts/header.js"></script>
+    <%- include('footer') %>
+</body>
+</html>

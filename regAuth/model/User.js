@@ -9,7 +9,15 @@ var User = new Schema({
         type: String
     }
 })
+
+var GSchema = new Schema({
+  googleId: String,
+  displayName: String
+});
+
   
 User.plugin(passportLocalMongoose);
+mongoose.model('users', GSchema);
   
 module.exports = mongoose.model('User', User)
+
