@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sobek Transit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <noscript><link rel="stylesheet" href="../css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../css/PlanTrip.css">
+    <link rel="stylesheet" href="../css/map.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoUGO3G-IFqcPfIJ9DxjB2uPVnKgeg-10&callback=initMap" async defer></script>
+    <script src="../scripts/map.js"></script>
+    <script>
+      function scrollToMap() {
+        const map = document.getElementById('map');
+        map.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function hideForm(){
+        const form = document.getElementById('attractionSelect');
+        form.style.display = 'none';
+        pickupSubmit.style.display = 'none';
+        
+      }
+    </script>
+  </head>  
+  <body>
+    <div id="wrapper" style="height: 100vh;">
+    <div id="header"></div>
+    <main>
+        <h1 id="head">Text</h1>
+    <form onsubmit="handleSelectOption(event)">
+       <h2>Choose a city:</h2>
+      <select id="citySelect" onchange="hideForm();">
+        <option value="Choose your Route"> Choose your Route</option>
+        <option value="Route 1"> Route 1</option>
+        <option value="Route 2">Route 2</option>
+        <option value="Route 3"> Route 3</option>
+        <option value="Route 4">Route 4</option>
+        <option value="Route 5">Route 5</option>
+      </select>
+      <input type="hidden" id="selectedOption" name="selectedOption">
+      <input type="submit" value="Show route on map" onclick="scrollToMap()">
+    </form>
+    
+    <script>
+    function handleSelectOption(event) {
+      event.preventDefault(); // prevent form submission
+      attractionSelect.style.display = 'block';
+      const selectedOption = document.getElementById('citySelect').value;
+      submitButton = document.getElementById('pickupSubmit');
+      pickupSubmit.style.display = 'block';
+
+      
+      document.getElementById('selectedOption').value = selectedOption;
+      // do something with the selected option value
+      
+      if (selectedOption == 'Route 1') {
+      showRoute1();
+    } else if (selectedOption == 'Route 2'){
+      showRoute2();
+    }else if (selectedOption == 'Route 3'){
+      showRoute3();
+    }else if (selectedOption == 'Route 4')
+      showRoute4();
+      else if (selectedOption == 'Route 5'){
+        showRoute5();
+      }
+      else if (selectedOption == 'Choose your Route'){
+        hideForm();
+      }
+    }
+    </script>
+      
+
+      <h2 name="attractionSelect">Choose Pickup Point:</h2>
+      <select id="attractionSelect" style="display: none;">
+        <input type="submit" id = "pickupSubmit"value="Confirm" style="display: none">
+      </select></select>
+      </main>
+    <script>
+    // Get references to the select elements
+    const citySelect = document.getElementById('citySelect');
+    const attractionSelect = document.getElementById('attractionSelect');
+    document.getElementById("pickupSubmit").addEventListener("click", function() {
+    // Redirect to the desired page
+    window.location.href = "../html/TripConfirmation.html";
+  });
+    
+    // Define the options for each city
+    const cityOptions = {
+      'Route 1':  [
+        { value: 'Choose your Pickup Point', label: 'Choose your Pickup Point' },
+        { value: 'Shaarawy', label: 'Shaarawy' },
+        { value: 'Zezenia', label: 'Zezenia' },
+        { value: 'Gleem', label: 'Gleem' },
+        { value: 'Bolkly', label: 'Bolkly' }
+      ],
+      'Route 2': [
+        { value: 'Choose your Pickup Point', label: 'Choose your Pickup Point' },
+        { value: 'Roushdy', label: 'Roushdy' },
+        { value: 'Sporting', label: 'Sporting' },
+        { value: 'Ibrahimia', label: 'Ibrahimia' }
+      ],
+      
+      'Route 3': [
+        { value: 'Choose your Pickup Point', label: 'Choose your Pickup Point' },
+        { value: 'Shaarawy', label: 'Shaarawy' },
+        { value: 'El Raml', label: 'El Raml' },
+        { value: 'Sidi Gaber', label: 'Sidi Gaber' }
+      ],
+    
+    
+      'Route 4': [
+        { value: 'Choose your Pickup Point', label: 'Choose your Pickup Point' },
+        { value: 'Abu Qir', label: 'Abu Qir' },
+        { value: 'Borg El Arab', label: 'Borg El Arab' },
+        { value: 'El Alamein', label: 'El Alamein' }
+      ],
+    
+      'Route 5': [
+        { value: 'Choose your Pickup Point', label: 'Choose your Pickup Point' },
+        { value: 'Smouha', label: 'Smouha' },
+        { value: 'Mansheya El Bakry', label: 'Mansheya El Bakry' },
+        { value: 'El Maamoura', label: 'El Maamoura' }
+      ]
+    
+    };
+    
+    // Populate the attraction select based on the selected city
+    citySelect.addEventListener('change', (event) => {
+      // Clear the attraction select
+      attractionSelect.innerHTML = '';
+    
+      // Get the selected city
+      const selectedCity = event.target.value;
+    
+      // Populate the attraction select with options for the selected city
+      for (let i = 0; i < cityOptions[selectedCity].length; i++) {
+        const option = document.createElement('option');
+        option.value = cityOptions[selectedCity][i].value;
+        option.text = cityOptions[selectedCity][i].label;
+        attractionSelect.add(option);
+      }
+    });
+    </script>
+    </div>
+    <div id="map-container">
+      <div id="map" style="width: 70vw; height: 50vh;"></div>
+  </div>
+    
+    
+    </body>
+    </html>
+    </main>
+    <div id="footer"></div></div>
+       
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src = "../scripts/header.js"></script>
+    </body>
+    </html>
+    
